@@ -6,20 +6,19 @@ interface Props {
   headline: string;
   image?: string;
 }
-const { slug, name, role, headline, image } = Astro.props;
+const { slug, name, role, headline } = Astro.props;
 ---
 
 <a href={`/doctors/${slug}`} class="group block">
-  <article class="card h-full flex flex-col">
-    <div class="aspect-[4/5] bg-gradient-to-br from-warmgray to-warmgray-dark/40 mb-6 overflow-hidden flex items-center justify-center">
-      {image && image !== '/images/placeholder-doctor.jpg' ? (
-        <img src={image} alt={name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-      ) : (
-        <svg class="w-24 h-24 text-navy/15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-        </svg>
-      )}
+  <article class="card h-full flex flex-col relative overflow-hidden">
+    <!-- Decorative top accent bar -->
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-sage to-navy opacity-80"></div>
+
+    <!-- Monogram badge -->
+    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-navy to-navy-400 flex items-center justify-center mb-6 mt-2">
+      <span class="font-display text-xl text-white tracking-wide">
+        {name.split(' ').filter((w) => w !== 'Dr.').map((w) => w[0]).join('')}
+      </span>
     </div>
 
     <span class="eyebrow mb-3">{role}</span>

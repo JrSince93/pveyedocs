@@ -44,10 +44,18 @@ const faqs = [
           </div>
         </div>
         <div class="lg:col-span-5 flex justify-center">
-          <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-gold/30 to-sage/15 flex items-center justify-center">
-            <svg class="w-32 h-32 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 3l5.5 8.5a6.5 6.5 0 11-11 0L12 3z" />
-            </svg>
+          <div class="relative w-64 lg:w-80">
+            <div class="absolute -inset-3 -z-10 bg-gradient-to-br from-gold/30 to-sage/15 blur-2xl rounded-full"></div>
+            <div class="aspect-square overflow-hidden rounded-full ring-1 ring-navy/10 shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1483519173755-be893fab1f46?q=80&w=900&auto=format&fit=crop"
+                alt="Macro photograph of a human eye"
+                class="w-full h-full object-cover"
+                width="700"
+                height="700"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </div>
