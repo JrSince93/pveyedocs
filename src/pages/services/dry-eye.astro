@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
+import CTASection from '../../components/CTASection.astro';
+
+const symptoms = [
+  'Burning, stinging, or scratchy eyes',
+  'Watery, irritated eyes (paradoxically — your body overcompensates)',
+  'Blurry vision that clears when you blink',
+  'A gritty, "something in my eye" sensation',
+  'Eye fatigue, especially with screen use',
+  'Sensitivity to light',
+  "Redness that won't go away",
+];
+
+const faqs = [
+  { q: 'Do drops really not work for me?', a: "Drops can help mask symptoms, but most chronic dry eye is caused by meibomian gland dysfunction — clogged glands in your eyelids that produce the oily layer of your tears. Drops add water, but they can't fix the underlying gland problem. IPL and RF target the cause." },
+  { q: 'Does IPL hurt?', a: 'It feels like a warm rubber-band snap on the skin around your eyes — not painful, just unusual. We use protective shields throughout the treatment and most patients are surprised at how comfortable it is.' },
+  { q: 'How many sessions will I need?', a: "Most patients need 4–6 sessions, spaced 2–4 weeks apart. Some patients return for maintenance treatments once or twice a year. We'll outline a clear plan after your initial evaluation." },
+  { q: 'Is there downtime?', a: "No real downtime. Your skin may look slightly pink for a few hours, similar to a mild sunburn. You'll be advised to avoid direct sun exposure on the treated area for a day or two." },
+  { q: 'Will I notice a difference right away?', a: "Some patients feel relief after the first or second session, but most see meaningful improvement around weeks 4–6 as inflammation reduces and the meibomian glands recover. Real, lasting improvement takes time — that's the trade-off for treating the cause rather than the symptom." },
+];
+---
+
+<BaseLayout title="IPL & RF Dry Eye Treatment in Phoenix, AZ" description="Advanced IPL (Intense Pulsed Light) and Radiofrequency dry-eye treatment in Phoenix. Real relief from chronic dry eye, meibomian gland dysfunction, and tear-film instability." pageType="service">
+
+  <section class="hero-bg">
+    <div class="container-x py-20 lg:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <a href="/services" class="inline-flex items-center text-gold text-xs uppercase tracking-extra-wide font-semibold mb-6 hover:text-gold-dark transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
+            All Services
+          </a>
+          <span class="eyebrow">Featured Treatment</span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mt-6 mb-8 leading-[1.1]">Real Relief from<br/><span class="text-gold">Chronic Dry Eye.</span></h1>
+          <span class="gold-rule"></span>
+          <p class="text-lg lg:text-xl text-navy/80 leading-relaxed mb-10">
+            IPL and Radiofrequency treatments target the <em>root cause</em> of dry eye — not just the symptoms. If drops haven't worked for you, this is the next conversation to have.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={`tel:${SITE.phoneRaw}`} class="btn-primary">Book a Consultation</a>
+            <a href={SITE.intakeFormUrl} target="_blank" rel="noopener" class="btn-secondary">New Patient Intake</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-gold/30 to-sage/15 flex items-center justify-center">
+            <svg class="w-32 h-32 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 3l5.5 8.5a6.5 6.5 0 11-11 0L12 3z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="container-x">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5">
+          <span class="eyebrow">Sound Familiar?</span>
+          <h2 class="font-display text-3xl sm:text-4xl mt-6 mb-6">The Symptoms<br/>Are Often Confusing.</h2>
+          <span class="gold-rule"></span>
+          <p class="text-lg text-navy/75 leading-relaxed">
+            Most people with chronic dry eye don't actually realize that's what's wrong. The symptoms get blamed on screens, allergies, or getting older. Some of them are surprisingly counterintuitive — like watery eyes that won't stop.
+          </p>
+        </div>
+        <div class="lg:col-span-7">
+          <ul class="space-y-4">
+            {symptoms.map((s) => (
+              <li class="flex gap-4 items-start py-4 border-b border-warmgray-dark/40">
+                <div class="w-8 h-8 bg-gold/15 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-navy/85 text-base lg:text-lg pt-1">{s}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="navy-bg text-white py-24 lg:py-32 relative overflow-hidden">
+    <div class="container-x relative z-10">
+      <div class="max-w-3xl mb-16">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl mt-6 mb-6 text-white">IPL + RF: Treating the Cause.</h2>
+        <span class="gold-rule"></span>
+        <p class="text-lg text-white/80 leading-relaxed">
+          About 86% of dry eye cases come from <strong class="text-gold">meibomian gland dysfunction</strong> — the glands in your eyelids that produce the oily layer of your tears get blocked, inflamed, or stop working. When the oil layer fails, your tears evaporate too quickly. You feel dry no matter how many drops you use.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div class="border border-gold/30 bg-navy-600/30 backdrop-blur-sm p-10 lg:p-12">
+          <div class="font-display text-sm uppercase tracking-extra-wide text-gold mb-3">Treatment 1</div>
+          <h3 class="font-display text-2xl lg:text-3xl mb-6 text-white">Intense Pulsed Light (IPL)</h3>
+          <p class="text-white/80 leading-relaxed mb-6">
+            Pulses of broad-spectrum light delivered to the skin around your eyes. The light reduces inflammation, eliminates abnormal blood vessels that contribute to dry eye, and warms the meibomian glands so blocked oils can flow again.
+          </p>
+          <ul class="space-y-2 text-sm text-white/75">
+            <li class="flex gap-2"><span class="text-gold">→</span> Reduces inflammation</li>
+            <li class="flex gap-2"><span class="text-gold">→</span> Liquefies hardened meibum</li>
+            <li class="flex gap-2"><span class="text-gold">→</span> Targets Demodex mites (a hidden contributor)</li>
+            <li class="flex gap-2"><span class="text-gold">→</span> FDA-cleared technology</li>
+          </ul>
+        </div>
+
+        <div class="border border-gold/30 bg-navy-600/30 backdrop-blur-sm p-10 lg:p-12">
+          <div class="font-display text-sm uppercase tracking-extra-wide text-gold mb-3">Treatment 2</div>
+          <h3 class="font-display text-2xl lg:text-3xl mb-6 text-white">Radiofrequency (RF)</h3>
+          <p class="text-white/80 leading-relaxed mb-6">
+            Gentle, controlled heat delivered through the skin around the eyes. RF reaches deeper than IPL, providing therapeutic warmth that opens the meibomian glands and improves circulation in the eyelid tissue.
+          </p>
+          <ul class="space-y-2 text-sm text-white/75">
+            <li class="flex gap-2"><span class="text-gold">→</span> Deep, even heating of the glands</li>
+            <li class="flex gap-2"><span class="text-gold">→</span> Improves tear-film quality</li>
+            <li class="flex gap-2"><span class="text-gold">→</span> Comfortable, spa-like feel</li>
+            <li class="flex gap-2"><span class="text-gold">→</span> Often combined with IPL for best results</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center text-white/60 italic text-sm mt-12 max-w-2xl mx-auto">
+        IPL and RF are often used together — IPL on the surface, RF for deeper warming — for a combined effect that addresses dry eye from multiple angles.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-32 bg-cream">
+    <div class="container-x">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="eyebrow">Common Questions</span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl mt-6 mb-6">What People Ask Us.</h2>
+          <span class="gold-rule mx-auto"></span>
+        </div>
+
+        <div class="space-y-4">
+          {faqs.map((faq) => (
+            <details class="group bg-white p-6 lg:p-8 border border-warmgray-dark/40 transition-colors hover:border-gold/50">
+              <summary class="flex justify-between items-start cursor-pointer list-none gap-6">
+                <h3 class="font-display text-lg lg:text-xl text-navy pr-4">{faq.q}</h3>
+                <span class="flex-shrink-0 w-8 h-8 bg-gold/15 flex items-center justify-center text-gold transition-transform duration-300 group-open:rotate-45">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" /></svg>
+                </span>
+              </summary>
+              <p class="mt-6 text-navy/75 leading-relaxed pr-12">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection heading="Ready to stop reaching for drops?" subheading="Book a dry-eye evaluation. We'll figure out what's actually going on and build a real treatment plan." />
+</BaseLayout>

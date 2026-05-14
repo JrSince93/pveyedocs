@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { DOCTORS } from '../../data/site';
+import DoctorCard from '../../components/DoctorCard.astro';
+import CTASection from '../../components/CTASection.astro';
+---
+
+<BaseLayout title="Our Optometrists" description="Meet the optometrists at Paradise Valley Eye Docs — Dr. Nimo Yousuf, Dr. Hannah Alegado, and Dr. Scott Wayment. Decades of combined experience in Phoenix, AZ.">
+
+  <section class="hero-bg">
+    <div class="container-x py-20 lg:py-28">
+      <div class="max-w-3xl">
+        <span class="eyebrow">Our Doctors</span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mt-6 mb-8">Doctors Who<br/><span class="text-gold">Listen First.</span></h1>
+        <span class="gold-rule"></span>
+        <p class="text-lg lg:text-xl text-navy/80 leading-relaxed">
+          Three optometrists, each with their own strengths — united by a shared commitment to thorough, modern, patient-centered eye care.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="container-x">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {DOCTORS.map((d) => (
+          <DoctorCard slug={d.slug} name={d.name} role={d.role} headline={d.headline} image={d.image} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

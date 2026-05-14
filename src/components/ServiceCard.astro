@@ -1,0 +1,49 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  short: string;
+  icon: 'eye' | 'contact' | 'drop';
+  featured?: boolean;
+}
+const { slug, name, short, icon, featured = false } = Astro.props;
+---
+
+<a href={`/services/${slug}`} class="group block">
+  <article class={`card h-full flex flex-col relative ${featured ? 'border-gold/40 bg-cream' : ''}`}>
+    {featured && (
+      <span class="absolute -top-3 left-8 bg-gold text-navy text-xs uppercase tracking-extra-wide font-semibold px-3 py-1">
+        Featured
+      </span>
+    )}
+
+    <div class="w-14 h-14 flex items-center justify-center mb-6 text-gold">
+      {icon === 'eye' && (
+        <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+      )}
+      {icon === 'contact' && (
+        <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <ellipse cx="12" cy="12" rx="9" ry="6" stroke-width="1.5" />
+          <circle cx="12" cy="12" r="2.5" stroke-width="1.5" />
+        </svg>
+      )}
+      {icon === 'drop' && (
+        <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3l5.5 8.5a6.5 6.5 0 11-11 0L12 3z" />
+        </svg>
+      )}
+    </div>
+
+    <h3 class="font-display text-xl lg:text-2xl mb-4 group-hover:text-gold transition-colors">{name}</h3>
+    <p class="text-navy/75 leading-relaxed flex-1">{short}</p>
+    <div class="mt-8 inline-flex items-center text-gold text-xs uppercase tracking-extra-wide font-semibold">
+      Learn More
+      <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </div>
+  </article>
+</a>
