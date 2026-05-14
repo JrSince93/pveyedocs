@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
+import CTASection from '../../components/CTASection.astro';
+---
+
+<BaseLayout title="Contact Lens Exams & Fittings in Phoenix, AZ" description="Specialty contact lens fittings in Phoenix — soft, rigid gas permeable, multifocal, monovision, and astigmatism. Comfortable fit, clear vision." pageType="service">
+
+  <section class="hero-bg">
+    <div class="container-x py-20 lg:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <a href="/services" class="inline-flex items-center text-gold text-xs uppercase tracking-extra-wide font-semibold mb-6 hover:text-gold-dark transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" /></svg>
+            All Services
+          </a>
+          <span class="eyebrow">Service</span>
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl mt-6 mb-8 leading-[1.1]">Contact Lens<br/><span class="text-gold">Exams & Fittings.</span></h1>
+          <span class="gold-rule"></span>
+          <p class="text-lg lg:text-xl text-navy/80 leading-relaxed mb-10">
+            The right lens fits your eye, your prescription, and your lifestyle. We make sure all three line up.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={`tel:${SITE.phoneRaw}`} class="btn-primary">Schedule Fitting</a>
+            <a href={SITE.intakeFormUrl} target="_blank" rel="noopener" class="btn-secondary">New Patient Intake</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-sage/20 to-gold/15 flex items-center justify-center">
+            <svg class="w-32 h-32 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <ellipse cx="12" cy="12" rx="9" ry="6" stroke-width="1" />
+              <circle cx="12" cy="12" r="2.5" stroke-width="1" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="container-x">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-7 space-y-6 text-base lg:text-lg text-navy/80 leading-relaxed">
+          <div>
+            <span class="eyebrow">Why a Fitting Matters</span>
+            <h2 class="font-display text-3xl sm:text-4xl mt-6 mb-6">Not All Contacts Are Created Equal.</h2>
+            <span class="gold-rule"></span>
+          </div>
+          <p>Your contact lens prescription isn't the same as your glasses prescription — even if the numbers look similar. A contact lens sits directly on your eye, which means the curvature, diameter, and material all need to match your specific anatomy.</p>
+          <p>A proper fitting takes precise measurements of your corneal shape, evaluates your tear film, and considers how you actually use your eyes — at a desk, on the road, on the trail. We'll often send you home with trial lenses so you can confirm comfort over a full day before we finalize the prescription.</p>
+          <p>Dr. Scott Wayment, on our team, brings particular depth in complex contact lens cases — including monovision, multifocal, and high astigmatism prescriptions.</p>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="bg-cream p-8 lg:p-10">
+            <h3 class="font-display text-lg uppercase tracking-extra-wide mb-6">Lens Types We Fit</h3>
+            <ul class="space-y-4 text-navy/80">
+              <li class="border-b border-warmgray-dark/40 pb-4">
+                <div class="font-semibold text-navy mb-1">Soft daily disposables</div>
+                <div class="text-sm text-navy/70">Comfortable, low-maintenance, fresh every day</div>
+              </li>
+              <li class="border-b border-warmgray-dark/40 pb-4">
+                <div class="font-semibold text-navy mb-1">Monthly & two-week soft lenses</div>
+                <div class="text-sm text-navy/70">Cost-effective for full-time wearers</div>
+              </li>
+              <li class="border-b border-warmgray-dark/40 pb-4">
+                <div class="font-semibold text-navy mb-1">Toric lenses for astigmatism</div>
+                <div class="text-sm text-navy/70">Stable, clear vision for irregular corneas</div>
+              </li>
+              <li class="border-b border-warmgray-dark/40 pb-4">
+                <div class="font-semibold text-navy mb-1">Multifocal lenses</div>
+                <div class="text-sm text-navy/70">Near and distance vision in one lens</div>
+              </li>
+              <li class="border-b border-warmgray-dark/40 pb-4">
+                <div class="font-semibold text-navy mb-1">Rigid gas permeable (RGP)</div>
+                <div class="text-sm text-navy/70">Crisp vision for complex prescriptions</div>
+              </li>
+              <li class="pb-0">
+                <div class="font-semibold text-navy mb-1">Monovision fittings</div>
+                <div class="text-sm text-navy/70">Distance in one eye, near in the other</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</BaseLayout>

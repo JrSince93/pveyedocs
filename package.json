@@ -1,0 +1,19 @@
+{
+  "name": "pveyedocs",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Paradise Valley Eye Docs website",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/tailwind": "^5.1.4",
+    "astro": "^5.0.5",
+    "tailwindcss": "^3.4.17"
+  }
+}

@@ -1,0 +1,75 @@
+---
+import { SITE } from '../data/site';
+
+const year = new Date().getFullYear();
+
+const quickLinks = [
+  { label: 'About', href: '/about' },
+  { label: 'Our Doctors', href: '/doctors' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact', href: '/contact' },
+];
+
+function formatTime(t: string | null): string {
+  if (!t) return '';
+  const [h, m] = t.split(':').map(Number);
+  const period = h >= 12 ? 'pm' : 'am';
+  const h12 = h % 12 || 12;
+  return m === 0 ? `${h12}${period}` : `${h12}:${String(m).padStart(2, '0')}${period}`;
+}
+---
+
+<footer class="navy-bg text-white">
+  <div class="container-x py-20 lg:py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+      <div class="lg:col-span-4">
+        <img src="/logos/logo-white.png" alt={SITE.name} class="h-20 w-auto mb-6" width="240" height="100" />
+        <p class="font-display text-sm uppercase tracking-extra-wide text-gold">{SITE.tagline}</p>
+      </div>
+
+      <div class="lg:col-span-3">
+        <h3 class="font-display text-sm uppercase tracking-extra-wide text-gold mb-5">Visit Us</h3>
+        <address class="not-italic text-white/85 space-y-1 text-sm leading-relaxed">
+          <div>{SITE.address.street}</div>
+          <div>{SITE.address.locality}, {SITE.address.region} {SITE.address.postal}</div>
+          <div class="text-white/60 italic pt-2">{SITE.address.insideOf}</div>
+        </address>
+        <div class="mt-6 space-y-2 text-sm">
+          <a href={`tel:${SITE.phoneRaw}`} class="block text-white hover:text-gold transition-colors">{SITE.phone}</a>
+          <a href={`mailto:${SITE.email}`} class="block text-white hover:text-gold transition-colors break-all">{SITE.email}</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3">
+        <h3 class="font-display text-sm uppercase tracking-extra-wide text-gold mb-5">Hours</h3>
+        <ul class="text-sm space-y-1.5">
+          {SITE.hours.map((h) => (
+            <li class="flex justify-between text-white/85">
+              <span>{h.day}</span>
+              <span class="font-medium">{h.open && h.close ? `${formatTime(h.open)} – ${formatTime(h.close)}` : 'Closed'}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h3 class="font-display text-sm uppercase tracking-extra-wide text-gold mb-5">Site</h3>
+        <ul class="space-y-2 text-sm">
+          {quickLinks.map((l) => (
+            <li><a href={l.href} class="text-white/85 hover:text-gold transition-colors">{l.label}</a></li>
+          ))}
+          <li><a href={SITE.intakeFormUrl} target="_blank" rel="noopener" class="text-white/85 hover:text-gold transition-colors">New Patient Intake</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-white/15 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/55">
+      <div>© {year} {SITE.legalName}. All rights reserved.</div>
+      <div class="flex gap-6">
+        <a href="/privacy" class="hover:text-gold transition-colors">Privacy Policy</a>
+        <a href="/accessibility" class="hover:text-gold transition-colors">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
